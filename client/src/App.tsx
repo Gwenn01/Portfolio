@@ -6,32 +6,55 @@ import Projects from "./pages/Projects";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
-import { useState } from "react";
 
-// ─── THEME TOGGLE ─────────────────────────────────────────────────────────────
-// The template defaults to dark mode. To add light mode support,
-// toggle the "dark" class on <html> and extend tailwind.config with darkMode: "class"
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
 function ThemeToggle() {
   const [dark, setDark] = useState(true);
-  const toggle = () => {
-    setDark((v) => !v);
+
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+
+  const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
+    setDark(!dark);
   };
+
   return (
     <button
-      onClick={toggle}
-      aria-label="Toggle theme"
-      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-zinc-900 border border-white/15 shadow-xl flex items-center justify-center text-lg hover:scale-110 transition-transform"
+      onClick={toggleTheme}
+      aria-label="Toggle Theme"
+      className="
+        fixed bottom-6 right-6 z-50
+        w-12 h-12 rounded-full
+        bg-white dark:bg-zinc-900
+        text-black dark:text-white
+        border border-black/10 dark:border-white/20
+        shadow-lg
+        flex items-center justify-center
+        hover:scale-110
+        transition-all duration-300
+      "
     >
-      {dark ? "☀️" : "🌙"}
+      {dark ? <Sun size={22} /> : <Moon size={22} />}
     </button>
   );
 }
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white antialiased">
+    <div
+      className="
+        min-h-screen
+        bg-white text-black
+        dark:bg-zinc-900 dark:text-white
+        transition-colors duration-300
+      "
+    >
       <Navbar />
+
       <main>
         <Hero />
         <About />
@@ -40,7 +63,9 @@ export default function App() {
         <Testimonials />
         <Contact />
       </main>
+
       <Footer />
+
       <ThemeToggle />
     </div>
   );
