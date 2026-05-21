@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="font-black text-lg text-violet-400 tracking-tight hover:text-violet-300 transition-colors font-mono"
+          className="font-black text-lg text-blue-400 tracking-tight hover:text-blue-300 transition-colors font-mono"
         >
           {personal.initials}
           <span className="text-white">.</span>
@@ -40,18 +40,19 @@ export default function Navbar() {
               onClick={() => scrollTo(id)}
               className={`capitalize text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 ${
                 active === id
-                  ? "text-violet-400 bg-violet-400/10"
+                  ? "text-blue-400 bg-blue-400/10"
                   : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               {id}
             </button>
           ))}
+
           <a
             href={personal.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-3 flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/25"
+            className="ml-3 flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
           >
             <Icon path={PATHS.download} size={14} />
             Resume
@@ -79,19 +80,18 @@ export default function Navbar() {
                 setOpen(false);
               }}
               className={`capitalize text-sm font-medium px-4 py-3 rounded-lg text-left transition-colors ${
-                active === id
-                  ? "text-violet-400 bg-violet-400/10"
-                  : "text-zinc-400"
+                active === id ? "text-blue-400 bg-blue-400/10" : "text-zinc-400"
               }`}
             >
               {id}
             </button>
           ))}
+
           <a
             href={personal.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 flex items-center gap-2 px-4 py-3 rounded-lg bg-violet-600 text-white text-sm font-semibold"
+            className="mt-2 flex items-center gap-2 px-4 py-3 rounded-lg bg-blue-600 text-white text-sm font-semibold"
           >
             <Icon path={PATHS.download} size={14} />
             Download Resume
