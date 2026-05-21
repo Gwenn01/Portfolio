@@ -1,18 +1,22 @@
 // ╔══════════════════════════════════════════════════════╗
 // ║  PORTFOLIO DATA — Edit this file to personalize      ║
 // ╚══════════════════════════════════════════════════════╝
+import picture from "../assets/picture.png";
 
 export const personal = {
-  name: "Your Name",
-  firstName: "Your",
+  name: "Arnel Gwen Nuqui",
+  firstName: "Arnel",
   title: "Full-Stack Developer",
   tagline:
     "I craft fast, accessible, and beautiful digital experiences — from pixel to production.",
-  email: "you@example.com",
-  location: "Manila, Philippines",
+  email: "arnelgwenn@gmail.com",
+  location: "Iba Zambales, Philippines",
+  picture: picture,
   availableForWork: true,
   avatar: "", // URL to photo — leave empty for initials avatar
-  initials: "YN",
+  initials: "AN",
+  experience: "3+ years",
+  projects: "10+ completed",
   resume: "/resume.pdf",
   social: {
     github: "https://github.com/yourusername",
