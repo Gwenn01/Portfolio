@@ -114,8 +114,7 @@ export function Avatar({ src, initials, size = "md", seed = 0 }: AvatarProps) {
     </div>
   );
 }
-
-// ─── SECTION HEADER ──────────────────────────────────────────────────────────
+// header section
 interface SectionHeaderProps {
   number: string;
   title: string;
@@ -132,65 +131,80 @@ export function SectionHeader({
   return (
     <div
       className={[
-        "mb-14",
-        centered ? "flex flex-col items-center text-center" : "",
+        "group/header mb-12 select-none cursor-default",
+        centered ? "flex flex-col items-center text-center w-full" : "w-full",
       ].join(" ")}
     >
-      {/* Eyebrow row: line + number badge + line */}
+      {/* Eyebrow row with animated lines */}
       <div
         className={[
-          "flex items-center gap-3 mb-5",
-          centered ? "justify-center" : "",
+          "flex items-center gap-3 mb-4 w-full",
+          centered ? "justify-center max-w-2xl" : "max-w-xl",
         ].join(" ")}
       >
-        <span className="h-px w-8 bg-blue-500/60" />
+        {/* Left Line: Grows on hover */}
+        <span className="h-px w-6 bg-blue-500/50 transition-all duration-300 group-hover/header:w-10" />
 
+        {/* Dynamic Number Badge */}
         <span
           className={[
-            "inline-flex items-center gap-1.5",
-            "px-2.5 py-1 rounded-full",
-            "bg-blue-500/10 dark:bg-blue-500/10",
-            "border border-blue-500/20 dark:border-blue-400/20",
-            "text-[10.5px] font-bold tracking-[0.14em] uppercase font-mono",
-            "text-blue-600 dark:text-blue-400",
+            "inline-flex items-center gap-2",
+            "px-3 py-1 rounded-full",
+            "bg-zinc-100 dark:bg-zinc-900/80",
+            "border border-zinc-200 dark:border-zinc-800",
+            "text-[10px] font-bold tracking-[0.16em] uppercase font-mono",
+            "text-zinc-600 dark:text-zinc-400",
+            "group-hover/header:border-blue-500/30 group-hover/header:text-blue-600 dark:group-hover/header:text-blue-400",
+            "transform group-hover/header:scale-105",
+            "transition-all duration-300 ease-out",
+            "shadow-xs",
           ].join(" ")}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse" />
+          {/* Signal Indicator Dot */}
+          <span className="relative flex h-1.5 w-1.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 dark:bg-blue-500 opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-blue-500" />
+          </span>
           {number}
         </span>
 
-        <span className="h-px flex-1 bg-linear-to-r from-blue-500/30 to-transparent" />
+        {/* Right Line: Fades into a deep gradient trail */}
+        <span className="h-px flex-1 bg-linear-to-r from-zinc-200 via-zinc-100/20 to-transparent dark:from-zinc-800 dark:via-zinc-900/10 transition-colors duration-500 group-hover/header:from-blue-500/30" />
       </div>
 
-      {/* Title */}
+      {/* Main Responsive Title */}
       <h2
         className={[
-          "font-extrabold tracking-[-0.03em] leading-[1.08]",
-          "text-3xl md:text-[2.75rem]",
-          "text-slate-900 dark:text-white",
-          // Subtle blue gradient on last word effect via a nested span
-          "ont-['Sora',sans-serif]",
+          "font-black tracking-tight leading-[1.1]",
+          "text-2xl sm:text-3xl md:text-4xl",
+          "text-zinc-900 dark:text-zinc-50",
+          "transition-colors duration-300",
+          "group-hover/header:text-black dark:group-hover/header:text-white",
           centered ? "max-w-2xl" : "max-w-xl",
         ].join(" ")}
       >
         {title}
       </h2>
 
-      {/* Underline accent */}
+      {/* Modern Sliding Underline Accent */}
       <div
         className={[
-          "mt-4 h-0.5 w-12 rounded-full bg-blue-500",
+          "mt-3.5 h-0.75 rounded-full bg-linear-to-r from-blue-600 to-cyan-500",
+          "w-8 group-hover/header:w-16", // Expands elegantly on hover
+          "transition-all duration-300 ease-out",
           centered ? "mx-auto" : "",
         ].join(" ")}
-      />
+      ></div>
 
-      {/* Subtitle */}
+      {/* Subtitle Definition Block */}
       {subtitle && (
         <p
           className={[
-            "mt-4 text-[15px] leading-relaxed",
-            "text-slate-500 dark:text-slate-400",
-            centered ? "max-w-lg" : "max-w-md",
+            "mt-4 text-sm sm:text-[15px] leading-relaxed font-normal",
+            "text-zinc-500 dark:text-zinc-400/80",
+            "group-hover/header:text-zinc-600 dark:group-hover/header:text-zinc-300",
+            "transition-colors duration-300",
+            centered ? "max-w-md mx-auto" : "max-w-md",
           ].join(" ")}
         >
           {subtitle}
@@ -199,6 +213,7 @@ export function SectionHeader({
     </div>
   );
 }
+
 // ─── FADE IN WRAPPER ─────────────────────────────────────────────────────────
 interface FadeInProps {
   children: React.ReactNode;
