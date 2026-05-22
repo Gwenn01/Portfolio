@@ -9,7 +9,7 @@ export const personal = {
   firstName: "Arnel",
   title: "Full-Stack Developer",
   tagline:
-    "I craft fast, accessible, and beautiful digital experiences — from pixel to production.",
+    "I am a hardworking, organized, and passionate programmer, with good sense of responsibility. I have a broad knowledge in software development, web development and AI automation of the current trends in the IT industry. I will carry out any given task in accordance with the rules and ethical standards.",
   email: "arnelgwenn@gmail.com",
   location: "Iba Zambales, Philippines",
   picture: picture,
@@ -20,9 +20,9 @@ export const personal = {
   projects: "10+ completed",
   resume: resume,
   social: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername",
+    github: "https://github.com/Gwenn01",
+    linkedin: "https://www.linkedin.com/in/arnel-gwen-nuqui-a20336261/",
+    facebook: "https://www.facebook.com/arnel.gwen.nuqui.2024/",
   },
 };
 
