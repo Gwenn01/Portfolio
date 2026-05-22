@@ -2,6 +2,7 @@
 // ║  PORTFOLIO DATA — Edit this file to personalize      ║
 // ╚══════════════════════════════════════════════════════╝
 import picture from "../assets/picture.png";
+import resume from "../docs/NUQUI_RESUME.pdf";
 
 export const personal = {
   name: "Arnel Gwen Nuqui",
@@ -17,7 +18,7 @@ export const personal = {
   initials: "AN",
   experience: "3+ years",
   projects: "10+ completed",
-  resume: "/resume.pdf",
+  resume: resume,
   social: {
     github: "https://github.com/yourusername",
     linkedin: "https://linkedin.com/in/yourusername",
