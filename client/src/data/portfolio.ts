@@ -56,7 +56,7 @@ export const about = {
       ],
     },
     {
-      category: "AI & Machine Learning, Deep Learning",
+      category: "AI, Machine & Deep Learning",
       items: ["OpenCV", "MediaPipe", "MobileNet", "CNN", "BERT"],
     },
     {
