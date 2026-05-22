@@ -55,7 +55,8 @@ export default function App() {
     >
       <Navbar />
 
-      <main>
+      {/* Wider modern layout */}
+      <main className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-16">
         <Hero />
         <About />
         <Experience />
