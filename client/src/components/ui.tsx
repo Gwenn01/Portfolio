@@ -49,7 +49,26 @@ export function Icon({ path, size = 20, className = "" }: IconProps) {
 // ─── TAG PILL ────────────────────────────────────────────────────────────────
 export function Tag({ label }: { label: string }) {
   return (
-    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide font-mono bg-violet-500/10 text-violet-300 border border-violet-500/20">
+    <span
+      className={[
+        "inline-flex items-center",
+        "px-3 py-1 rounded-full",
+        "text-[11px] font-medium tracking-wide",
+        "transition-all duration-200",
+        "border",
+
+        // Light mode
+        "bg-blue-50 text-blue-700 border-blue-200",
+
+        // Dark mode
+        "dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20",
+
+        // Hover
+        "hover:bg-blue-100 dark:hover:bg-blue-500/20",
+        "hover:border-blue-300 dark:hover:border-blue-400/40",
+        "hover:text-blue-800 dark:hover:text-white",
+      ].join(" ")}
+    >
       {label}
     </span>
   );

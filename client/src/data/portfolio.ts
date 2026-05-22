@@ -94,21 +94,76 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     id: "exp-1",
-    role: "Full-Stack Developer",
-    company: "Company Name",
-    period: "2023 — Present",
+    role: "Backend Developer Intern (OJT)",
+    company:
+      "Office of the Program Chair – BS Information Technology, PRMSU Iba",
+    period: "Dec 2025 — May 2026",
     description:
-      "Built and maintained web applications for internal teams. Led the migration from a legacy PHP system to a modern React + Django stack, reducing load times by 60%.",
-    tags: ["React", "Django", "TypeScript", "PostgreSQL"],
+      "Developed and maintained an Automated Proposal Review and Processing System designed to streamline proposal submission, evaluation, approval workflows, and document tracking for academic operations. Built scalable backend services using Django and REST APIs with role-based authentication, workflow automation, and secure database integration. Managed PostgreSQL databases hosted on AWS to ensure reliable and scalable data storage. Collaborated with development teams using Git and GitHub for version control, feature integration, and deployment workflows while following clean coding and software engineering practices.",
+    tags: [
+      "Django",
+      "Python",
+      "REST API",
+      "PostgreSQL",
+      "AWS",
+      "Git",
+      "GitHub",
+    ],
   },
+
   {
     id: "exp-2",
-    role: "Junior Developer",
-    company: "Another Company",
-    period: "2021 — 2023",
+    role: "Systems & Administrative Support Intern (Office Assistant)",
+    company:
+      "Office of the Program Chair – BS Information Technology, PRMSU Iba",
+    period: "Jun 2025 — Jul 2025",
     description:
-      "Developed REST APIs consumed by mobile apps. Contributed to frontend refactoring efforts and implemented automated testing pipelines.",
-    tags: ["Python", "React Native", "Jest"],
+      "Provided systems and administrative support for student lifecycle management operations using the Student Information and Accounting System (SIAS). Assisted in enrollment processing, student record verification, and data auditing to maintain accurate academic records. Migrated paper-based documents into digital formats using Google Workspace and Microsoft Excel, improving accessibility and operational efficiency. Developed automated reporting templates using advanced Excel functions such as VLOOKUP and Pivot Tables to reduce repetitive manual tasks and improve reporting accuracy. Supported IT-related concerns and performed data validation and cleaning to ensure data consistency across institutional systems.",
+    tags: [
+      "Excel",
+      "Google Workspace",
+      "Data Validation",
+      "SIAS",
+      "Administrative Support",
+      "Reporting Automation",
+    ],
+  },
+
+  {
+    id: "exp-3",
+    role: "Data Analytics & Admissions Support Intern (Office Assistant)",
+    company:
+      "Office of the Program Chair – BS Information Technology, PRMSU Iba",
+    period: "Apr 2025 — May 2025",
+    description:
+      "Analyzed and organized PCET datasets to support admission evaluations and student placement decisions. Automated scoring and data-processing workflows using Microsoft Excel and Google Sheets, significantly reducing manual computation time and improving accuracy. Maintained confidentiality while handling sensitive student information and ensured compliance with data privacy practices. Digitized and organized admission-related records to improve accessibility, retrieval efficiency, and institutional record management processes.",
+    tags: [
+      "Data Analytics",
+      "Excel",
+      "Google Sheets",
+      "Data Processing",
+      "Admissions Support",
+      "Data Privacy",
+    ],
+  },
+
+  {
+    id: "exp-4",
+    role: "IT Support & Web Development Intern (Office Assistant)",
+    company:
+      "Office of the Program Chair – BS Information Technology, PRMSU Iba",
+    period: "2024 — 2025",
+    description:
+      "Developed a static departmental website using HTML, CSS, and JavaScript to improve accessibility of departmental information and digital resources. Performed hardware troubleshooting, software maintenance, PC optimization, and system reformatting to support office operations and maintain system performance. Implemented backup and file management solutions to improve data integrity and minimize the risk of data loss. Coordinated with faculty and administrative departments for document processing, technical support, and workflow improvements.",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "IT Support",
+      "Hardware Troubleshooting",
+      "System Maintenance",
+      "Web Development",
+    ],
   },
 ];
 

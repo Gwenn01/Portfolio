@@ -3,7 +3,6 @@ import Hero from "./pages/Hero";
 import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
-import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 
@@ -61,7 +60,6 @@ export default function App() {
         <About />
         <Experience />
         <Projects />
-        <Testimonials />
         <Contact />
       </main>
 
