@@ -28,31 +28,59 @@ export const personal = {
 
 export const about = {
   paragraphs: [
-    "I'm a passionate developer with 3+ years of experience building web and mobile applications. I specialize in React, TypeScript, and Django REST Framework.",
-    "When I'm not coding, I'm exploring trails, tinkering with side projects, or diving deep into system design. I care deeply about clean code, great UX, and solving real problems for real people.",
+    "I'm a passionate developer with experience in building web and mobile applications focused on AI, automation, and full-stack development. I mainly work with technologies like Django, Flask, Node.js, React.js, React Native, TypeScript, PostgreSQL, and MySQL.",
+
+    "I also have knowledge in machine learning and deep learning, which I applied in several academic and personal projects involving AI-based systems and automation.",
+
+    "When I'm not coding, I'm usually exploring new technologies, working on side projects, or improving my skills in system design and software development. I enjoy building practical systems, writing clean code, and creating solutions that solve real-world problems.",
   ],
   skills: [
     {
+      category: "Programming Languages",
+      items: ["C", "C++", "Java", "PHP", "Python", "JavaScript", "TypeScript"],
+    },
+    {
       category: "Frontend",
-      items: [
-        "React",
-        "TypeScript",
-        "React Native",
-        "Tailwind CSS",
-        "Next.js",
-        "Vite",
-      ],
+      items: ["React", "React Native", "Tailwind CSS", "Bootstrap", "Vite"],
     },
     {
       category: "Backend",
-      items: ["Django", "Python", "DRF", "PostgreSQL", "Celery", "REST APIs"],
+      items: [
+        "Django",
+        "Flask",
+        "Express.js",
+        "DRF",
+        "REST APIs",
+        "PostgreSQL",
+        "MySQL",
+      ],
+    },
+    {
+      category: "AI & Machine Learning, Deep Learning",
+      items: ["OpenCV", "MediaPipe", "MobileNet", "CNN", "BERT"],
     },
     {
       category: "Tools",
-      items: ["Git", "Docker", "Figma", "Linux", "VS Code", "Postman"],
+      items: [
+        "Git",
+        "GitHub",
+        "Figma",
+        "Linux",
+        "VS Code",
+        "Postman",
+        "MySQL Workbench",
+        "pgAdmin",
+        "Google Colab",
+      ],
     },
   ],
 };
+
+export const STATS = [
+  { value: "3+", label: "Years exp.", sub: "Full-stack" },
+  { value: "10+", label: "Projects", sub: "Shipped" },
+  { value: "100%", label: "Committed", sub: "Always" },
+];
 
 export type Experience = {
   id: string;

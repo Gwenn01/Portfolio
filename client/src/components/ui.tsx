@@ -103,6 +103,7 @@ interface SectionHeaderProps {
   subtitle?: string;
   centered?: boolean;
 }
+
 export function SectionHeader({
   number,
   title,
@@ -110,22 +111,75 @@ export function SectionHeader({
   centered,
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-14 ${centered ? "text-center" : ""}`}>
-      <p className="text-xs font-bold tracking-widest text-violet-400 uppercase font-mono mb-2">
-        {number}
-      </p>
-      <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-3 leading-tight">
+    <div
+      className={[
+        "mb-14",
+        centered ? "flex flex-col items-center text-center" : "",
+      ].join(" ")}
+    >
+      {/* Eyebrow row: line + number badge + line */}
+      <div
+        className={[
+          "flex items-center gap-3 mb-5",
+          centered ? "justify-center" : "",
+        ].join(" ")}
+      >
+        <span className="h-px w-8 bg-blue-500/60" />
+
+        <span
+          className={[
+            "inline-flex items-center gap-1.5",
+            "px-2.5 py-1 rounded-full",
+            "bg-blue-500/10 dark:bg-blue-500/10",
+            "border border-blue-500/20 dark:border-blue-400/20",
+            "text-[10.5px] font-bold tracking-[0.14em] uppercase font-mono",
+            "text-blue-600 dark:text-blue-400",
+          ].join(" ")}
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse" />
+          {number}
+        </span>
+
+        <span className="h-px flex-1 bg-linear-to-r from-blue-500/30 to-transparent" />
+      </div>
+
+      {/* Title */}
+      <h2
+        className={[
+          "font-extrabold tracking-[-0.03em] leading-[1.08]",
+          "text-3xl md:text-[2.75rem]",
+          "text-slate-900 dark:text-white",
+          // Subtle blue gradient on last word effect via a nested span
+          "ont-['Sora',sans-serif]",
+          centered ? "max-w-2xl" : "max-w-xl",
+        ].join(" ")}
+      >
         {title}
       </h2>
+
+      {/* Underline accent */}
+      <div
+        className={[
+          "mt-4 h-0.5 w-12 rounded-full bg-blue-500",
+          centered ? "mx-auto" : "",
+        ].join(" ")}
+      />
+
+      {/* Subtitle */}
       {subtitle && (
-        <p className="text-zinc-400 text-base max-w-md leading-relaxed">
+        <p
+          className={[
+            "mt-4 text-[15px] leading-relaxed",
+            "text-slate-500 dark:text-slate-400",
+            centered ? "max-w-lg" : "max-w-md",
+          ].join(" ")}
+        >
           {subtitle}
         </p>
       )}
     </div>
   );
 }
-
 // ─── FADE IN WRAPPER ─────────────────────────────────────────────────────────
 interface FadeInProps {
   children: React.ReactNode;
