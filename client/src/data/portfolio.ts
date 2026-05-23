@@ -355,17 +355,43 @@ export const projects: Project[] = [
     featured: true,
     accentColor: "cyan",
   },
-
   {
     id: "proj-9",
+    title: "Barangay Finance Tracking System",
+    shortDescription:
+      "Backend-powered financial management system for automating barangay budget transactions and public transparency.",
+    fullDescription:
+      "Developed backend services for a barangay financial tracking and budget management platform designed for Barangay San Agustin, Iba, Zambales. The system automates barangay budget transactions, financial workflows, and public transparency reporting through a centralized web application.\n\nBuilt RESTful APIs using Flask and PostgreSQL for handling financial records, transaction processing, reporting workflows, and secure data management. Utilized Postman extensively for API testing, validation, and debugging throughout development.\n\nCollaborated with a frontend developer responsible for the user interface while focusing primarily on backend architecture, API integration, database management, and deployment workflows. The platform also includes a public-facing landing page to improve transparency by allowing citizens to view budget-related information and financial summaries.\n\nDeployed backend services using Render to ensure stable cloud hosting and API accessibility.",
+
+    category: "Government Financial System",
+    year: "2026",
+    role: "Backend Developer",
+    image: "",
+    tags: [
+      "Flask",
+      "PostgreSQL",
+      "REST API",
+      "Postman",
+      "Render",
+      "Backend Development",
+      "Financial Management",
+    ],
+    github: "https://github.com/Gwenn01/BarangayFinanceTrackBackendDeployment",
+    live: "",
+    featured: true,
+    accentColor: "blue",
+  },
+
+  {
+    id: "proj-10",
     title: "Automated Proposal Review and Processing System",
     shortDescription:
       "Workflow automation platform for proposal creation and approval.",
     fullDescription:
-      "Designed and developed a full-stack proposal management system for automating proposal creation, submission, review, approval, and monitoring workflows for the Extension Office. Built scalable backend services using Django and PostgreSQL while creating responsive frontend interfaces using React and TypeScript. Implemented workflow automation, role-based access control, proposal dashboards, and approval pipelines to reduce manual administrative processes and improve operational efficiency.",
+      "Designed and developed a backend proposal management system for automating proposal creation, submission, review, approval, and monitoring workflows for the Extension Office. Built scalable backend services using Django and PostgreSQL. Implemented workflow automation, role-based access control, proposal dashboards, and approval pipelines to reduce manual administrative processes and improve operational efficiency.",
     category: "Enterprise Academic System",
     year: "2026",
-    role: "Full-Stack Developer",
+    role: "Backend Developer",
     image: "",
     tags: [
       "Django",
@@ -381,7 +407,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: "proj-10",
+    id: "proj-11",
     title: "Nutrition & Fitness Tracking App",
     shortDescription:
       "Cross-platform calorie tracking and fitness monitoring application.",
