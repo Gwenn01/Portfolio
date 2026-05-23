@@ -8,6 +8,13 @@ export const personal = {
   name: "Arnel Gwen Nuqui",
   firstName: "Arnel",
   title: "Full-Stack Developer",
+  roles: [
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Web Developer",
+    "Application Developer",
+    "AI Automation Engineer",
+  ],
   tagline:
     "I am a hardworking, organized, and passionate programmer, with good sense of responsibility. I have a broad knowledge in software development, web development and AI automation of the current trends in the IT industry. I will carry out any given task in accordance with the rules and ethical standards.",
   email: "arnelgwenn@gmail.com",
