@@ -29,9 +29,7 @@ export const personal = {
 export const about = {
   paragraphs: [
     "I'm a passionate developer with experience in building web and mobile applications focused on AI, automation, and full-stack development. I mainly work with technologies like Django, Flask, Node.js, React.js, React Native, TypeScript, PostgreSQL, and MySQL.",
-
     "I also have knowledge in machine learning and deep learning, which I applied in several academic and personal projects involving AI-based systems and automation.",
-
     "When I'm not coding, I'm usually exploring new technologies, working on side projects, or improving my skills in system design and software development. I enjoy building practical systems, writing clean code, and creating solutions that solve real-world problems.",
   ],
   skills: [
@@ -76,10 +74,27 @@ export const about = {
   ],
 };
 
-export const STATS = [
-  { value: "3+", label: "Years exp.", sub: "Full-stack" },
-  { value: "10+", label: "Projects", sub: "Shipped" },
-  { value: "100%", label: "Committed", sub: "Always" },
+export const EDUCATION_ACHIEVEMENTS = [
+  {
+    title: "Bachelor of Science in Information Technology",
+    subtitle: "President Ramon Magsaysay State University",
+    year: "2022 - 2026",
+    description:
+      "Focused on web & software development, database systems, networking, and AI integration.",
+  },
+  {
+    title: "Cum Laude Candidate",
+    subtitle: "Academic Achievement",
+    year: "2022 - 2026",
+    description:
+      "Maintained strong academic performance throughout the Bachelor of Science in Information Technology.",
+  },
+  {
+    title: "Consistent Dean’s Lister",
+    subtitle: "Academic Achievement",
+    year: "1st Year - 4th Year",
+    description: "Maintained strong academic performance throughout college.",
+  },
 ];
 
 export type Experience = {
