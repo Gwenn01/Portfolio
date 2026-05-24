@@ -142,7 +142,7 @@ export const experiences: Experience[] = [
       "Office of the Program Chair – BS Information Technology, PRMSU Iba",
     period: "Dec 2025 — May 2026",
     description:
-      "Developed and maintained an Automated Proposal Review and Processing System designed to streamline proposal submission, evaluation, approval workflows, and document tracking for academic operations. Built scalable backend services using Django and REST APIs with role-based authentication, workflow automation, and secure database integration. Managed PostgreSQL databases hosted on AWS to ensure reliable and scalable data storage. Collaborated with development teams using Git and GitHub for version control, feature integration, and deployment workflows while following clean coding and software engineering practices.",
+      "Developed an Automated Proposal Review and Processing System designed to streamline proposal submission, review, approval workflows, and document tracking. Built scalable backend services using Django and REST APIs with role-based authentication, workflow automation, and secure database integration. Managed PostgreSQL databases hosted on AWS to ensure reliable and scalable data storage. Collaborated with development teams using Git and GitHub for version control, feature integration, and deployment workflows while following clean coding and software engineering practices.",
     tags: [
       "Django",
       "Python",
@@ -162,7 +162,7 @@ export const experiences: Experience[] = [
       "Office of the Program Chair – BS Information Technology, PRMSU Iba",
     period: "Jun 2025 — Jul 2025",
     description:
-      "Provided systems and administrative support for student lifecycle management operations using the Student Information and Accounting System (SIAS). Assisted in enrollment processing, student record verification, and data auditing to maintain accurate academic records. Migrated paper-based documents into digital formats using Google Workspace and Microsoft Excel, improving accessibility and operational efficiency. Developed automated reporting templates using advanced Excel functions such as VLOOKUP and Pivot Tables to reduce repetitive manual tasks and improve reporting accuracy. Supported IT-related concerns and performed data validation and cleaning to ensure data consistency across institutional systems.",
+      "Served as an Office Assistant supporting student lifecycle management operations using the Student Information and Accounting System (SIAS). Assisted with enrollment processing, student record verification, and data auditing to maintain accurate academic records. Converted paper-based documents into digital formats using Google Workspace and Microsoft Excel to improve accessibility and workflow efficiency. Created automated reporting templates using advanced Excel functions such as VLOOKUP and Pivot Tables, reducing repetitive manual tasks and improving report accuracy. Also provided basic IT support, performed data validation and data cleaning, and assisted in maintaining data consistency across institutional systems.",
     tags: [
       "Excel",
       "Google Workspace",
@@ -181,7 +181,7 @@ export const experiences: Experience[] = [
       "Office of the Program Chair – BS Information Technology, PRMSU Iba",
     period: "Apr 2025 — May 2025",
     description:
-      "Analyzed and organized PCET datasets to support admission evaluations and student placement decisions. Automated scoring and data-processing workflows using Microsoft Excel and Google Sheets, significantly reducing manual computation time and improving accuracy. Maintained confidentiality while handling sensitive student information and ensured compliance with data privacy practices. Digitized and organized admission-related records to improve accessibility, retrieval efficiency, and institutional record management processes.",
+      "Served as an Office Assistant responsible for analyzing and organizing PCET datasets to support admission evaluations and student placement decisions. Automated scoring and data-processing workflows using Microsoft Excel and Google Sheets, reducing manual computation time and improving accuracy. Maintained confidentiality while handling sensitive student information and ensured compliance with data privacy practices. Digitized and organized admission-related records to improve accessibility, retrieval efficiency, and overall record management processes. Also assisted with administrative tasks, data verification, and general office operations to support daily institutional workflows.",
     tags: [
       "Data Analytics",
       "Excel",
@@ -200,7 +200,7 @@ export const experiences: Experience[] = [
       "Office of the Program Chair – BS Information Technology, PRMSU Iba",
     period: "2024 — 2025",
     description:
-      "Developed a static departmental website using HTML, CSS, and JavaScript to improve accessibility of departmental information and digital resources. Performed hardware troubleshooting, software maintenance, PC optimization, and system reformatting to support office operations and maintain system performance. Implemented backup and file management solutions to improve data integrity and minimize the risk of data loss. Coordinated with faculty and administrative departments for document processing, technical support, and workflow improvements.",
+      "Served as an Office Assistant responsible for developing a static website using HTML, CSS, and JavaScript to improve accessibility of departmental information and digital resources. Performed hardware troubleshooting, software maintenance, PC optimization, and system reformatting to support office operations and maintain system performance. Implemented backup and file management solutions to improve data integrity and minimize the risk of data loss. Coordinated with faculty and administrative departments for document processing, technical support, and workflow improvements.",
     tags: [
       "HTML",
       "CSS",
@@ -444,10 +444,9 @@ export const projects: Project[] = [
     id: "proj-9",
     title: "Barangay Finance Tracking System",
     shortDescription:
-      "Backend-powered financial management system for automating barangay budget transactions and public transparency.",
+      "Financial management system designed to automate barangay budget transactions and improve public transparency..",
     fullDescription:
-      "Developed backend services for a barangay financial tracking and budget management platform designed for Barangay San Agustin, Iba, Zambales. The system automates barangay budget transactions, financial workflows, and public transparency reporting through a centralized web application.\n\nBuilt RESTful APIs using Flask and PostgreSQL for handling financial records, transaction processing, reporting workflows, and secure data management. Utilized Postman extensively for API testing, validation, and debugging throughout development.\n\nCollaborated with a frontend developer responsible for the user interface while focusing primarily on backend architecture, API integration, database management, and deployment workflows. The platform also includes a public-facing landing page to improve transparency by allowing citizens to view budget-related information and financial summaries.\n\nDeployed backend services using Render to ensure stable cloud hosting and API accessibility.",
-
+      "Worked primarily as a Backend Developer in a thesis client project for Barangay San Agustin, Iba, Zambales, collaborating with one frontend developer responsible for the user interface. Developed backend services for a financial tracking and budget management platform designed to automate barangay budget transactions, financial workflows, and transparency reporting through a centralized web application. Built RESTful APIs using Flask and PostgreSQL for handling financial records, transaction processing, reporting workflows, and secure data management, while using Postman extensively for API testing, validation, and debugging. Also managed backend architecture, database integration, deployment workflows, and cloud hosting using Render to ensure stable API accessibility, while supporting a public-facing landing page that allows citizens to view budget-related information and financial summaries.",
     category: "Government Financial System",
     year: "2026",
     role: "Backend Developer",
@@ -482,9 +481,9 @@ export const projects: Project[] = [
     id: "proj-10",
     title: "Automated Proposal Review and Processing System",
     shortDescription:
-      "Workflow automation platform for proposal creation and approval.",
+      "Workflow automation platform for proposal creation, review and approval.",
     fullDescription:
-      "Designed and developed a backend proposal management system for automating proposal creation, submission, review, approval, and monitoring workflows for the Extension Office. Built scalable backend services using Django and PostgreSQL. Implemented workflow automation, role-based access control, proposal dashboards, and approval pipelines to reduce manual administrative processes and improve operational efficiency.",
+      "Worked primarily as a Backend Developer in a team-based project for the Extension Office, focusing on the design and development of a proposal management system that automates proposal creation, submission, review, approval, and monitoring workflows. Developed scalable backend services using Django and PostgreSQL, while collaborating with two frontend developers responsible for the user interface and client-side implementation. Implemented workflow automation, role-based access control, proposal dashboards, and approval pipelines to reduce manual administrative processes and improve overall operational efficiency.",
     category: "Internship Project",
     year: "2026",
     role: "Backend Developer",
@@ -502,6 +501,8 @@ export const projects: Project[] = [
       "React",
       "TypeScript",
       "PostgreSQL",
+      "Postman",
+      "Git & Github",
       "Workflow Automation",
     ],
     github: "https://github.com/Gwenn01/AutomatingProposalDocsProcessV2",
@@ -513,8 +514,7 @@ export const projects: Project[] = [
   {
     id: "proj-11",
     title: "Nutrition & Fitness Tracking App",
-    shortDescription:
-      "Cross-platform calorie tracking and fitness monitoring application.",
+    shortDescription: "Calories, nutrition and fitness tracking application.",
     fullDescription:
       "Developed a nutrition and fitness tracking application focused on calorie management, workout logging, and health monitoring using React Native and Django. Integrated Gemini AI, barcode scanning, and images-based food recognition to automate nutritional analysis and food tracking. Implemented reusable nutrition records, fitness progress monitoring, and workout tracking features while utilizing SQLite for efficient mobile data management.",
     category: "Personal Project",
