@@ -93,7 +93,7 @@ export const EDUCATION_ACHIEVEMENTS = [
       "Focused on web & software development, database systems, networking, and AI integration.",
   },
   {
-    logo: "/bsanhs.jpeg",
+    logo: "/bsanhs.png",
     title: "SHS: Computer System Servicing NC II",
     subtitle: "Benigno S. Aquino National High School",
     date: "Aug 2020 - July 2026",
@@ -103,7 +103,7 @@ export const EDUCATION_ACHIEVEMENTS = [
       "Focused on networking, hardware troubleshooting, software maintenance, and system optimization.",
   },
   {
-    logo: "/bsanhs.jpeg",
+    logo: "/bsanhs.png",
     title: "JHS: COOKERY NC II",
     subtitle: "Benigno S. Aquino National High School",
     date: "Jun 2015 - Mar 2020",
