@@ -83,24 +83,44 @@ export const about = {
 
 export const EDUCATION_ACHIEVEMENTS = [
   {
-    title: "Bachelor of Science in Information Technology",
+    logo: "/prmsu.png",
+    title: "BS Information Technology",
     subtitle: "President Ramon Magsaysay State University",
-    year: "2022 - 2026",
+    date: "Sep 2022 - July 2026",
+    grade: "1.4599",
+    achievements: "Candidate for Cum Laude",
     description:
       "Focused on web & software development, database systems, networking, and AI integration.",
   },
   {
-    title: "Cum Laude Candidate",
-    subtitle: "Academic Achievement",
-    year: "2022 - 2026",
+    logo: "/bsanhs.jpeg",
+    title: "SHS: Computer System Servicing NC II",
+    subtitle: "Benigno S. Aquino National High School",
+    date: "Aug 2020 - July 2026",
+    grade: "96",
+    achievements: "Graduated with High Honors",
     description:
-      "Maintained strong academic performance throughout the Bachelor of Science in Information Technology.",
+      "Focused on networking, hardware troubleshooting, software maintenance, and system optimization.",
   },
   {
-    title: "Consistent Dean’s Lister",
-    subtitle: "Academic Achievement",
-    year: "1st Year - 4th Year",
-    description: "Maintained strong academic performance throughout college.",
+    logo: "/bsanhs.jpeg",
+    title: "JHS: COOKERY NC II",
+    subtitle: "Benigno S. Aquino National High School",
+    date: "Jun 2015 - Mar 2020",
+    grade: "",
+    achievements: "",
+    description:
+      "Focused on food preparation, cooking techniques, kitchen safety, and culinary skills development.",
+  },
+  {
+    logo: "",
+    title: "Elementary",
+    subtitle: "Santa Cruz Elementary School",
+    date: "Jun 2009 - May 2015",
+    grade: "",
+    achievements: "",
+    description:
+      "Focused on foundational education, literacy, numeracy, and social development.",
   },
 ];
 
