@@ -33,11 +33,17 @@ export default function CertGrid({ certs }: Props) {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {certs.map((cert, i) => (
-        <FadeIn key={cert.id} delay={i * 0.06}>
-          <CertCard cert={cert} />
-        </FadeIn>
-      ))}
+      {[...certs]
+        .sort((a, b) => {
+          const aNum = Number(a.id.replace("cert-", ""));
+          const bNum = Number(b.id.replace("cert-", ""));
+          return bNum - aNum; // newest first
+        })
+        .map((cert, i) => (
+          <FadeIn key={cert.id} delay={i * 0.06}>
+            <CertCard cert={cert} />
+          </FadeIn>
+        ))}
     </div>
   );
 }
