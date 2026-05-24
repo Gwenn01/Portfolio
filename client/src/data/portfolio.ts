@@ -131,6 +131,7 @@ export type Experience = {
   period: string;
   description: string;
   tags: string[];
+  document: string | null;
 };
 
 export const experiences: Experience[] = [
@@ -151,6 +152,7 @@ export const experiences: Experience[] = [
       "Git",
       "GitHub",
     ],
+    document: "/experienceImages/exp4.jpg",
   },
 
   {
@@ -169,6 +171,7 @@ export const experiences: Experience[] = [
       "Administrative Support",
       "Reporting Automation",
     ],
+    document: "/experienceImages/exp3.jpg",
   },
 
   {
@@ -187,6 +190,7 @@ export const experiences: Experience[] = [
       "Admissions Support",
       "Data Privacy",
     ],
+    document: "/experienceImages/exp2.jpg",
   },
 
   {
@@ -206,6 +210,7 @@ export const experiences: Experience[] = [
       "System Maintenance",
       "Web Development",
     ],
+    document: "/experienceImages/exp1.jpg",
   },
 ];
 
