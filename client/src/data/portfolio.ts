@@ -238,7 +238,7 @@ export const projects: Project[] = [
     category: "Academic Project",
     year: "2023",
     role: "Full-Stack Developer",
-    images: [],
+    images: ["/projectImage/laptop1.jpeg"],
     tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     github: "https://github.com/Gwenn01/LaptopFactoryStore",
     live: "",
@@ -263,23 +263,22 @@ export const projects: Project[] = [
     featured: false,
     accentColor: "cyan",
   },
-
   {
     id: "proj-3",
-    title: "Sustainable Volunteer Web Platform",
+    title: "Dental Appointment System",
     shortDescription:
-      "Hackathon-built platform for environmental volunteer event management.",
+      "Clinic scheduling and patient appointment management system.",
     fullDescription:
-      "Developed a full-stack volunteer management platform during a sustainability-focused hackathon. Built using React.js, Express.js, TypeScript, and MongoDB, the platform enabled volunteer event organization, participant coordination, and decentralized integrations using ICP technologies. Collaborated within a fast-paced team environment and delivered a production-ready prototype within a two-week development cycle.",
-    category: "Hackathon Project",
+      "Developed a dental appointment management system focused on improving clinic scheduling workflows and patient reservation handling. Built using PHP, MySQL, HTML, CSS, and JavaScript within a XAMPP environment. Implemented appointment scheduling, patient tracking, reservation workflows, and responsive interfaces to improve accessibility and clinic management processes.",
+    category: "Academic Project",
     year: "2024",
-    role: "Frontend & Backend Developer",
+    role: "Full-Stack Developer",
     images: [],
-    tags: ["React", "TypeScript", "Express.js", "MongoDB", "ICP"],
-    github: "https://github.com/Gwenn01/azle-react",
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    github: "https://github.com/Gwenn01/Appointment-System",
     live: "",
     featured: false,
-    accentColor: "emerald",
+    accentColor: "amber",
   },
 
   {
@@ -302,20 +301,25 @@ export const projects: Project[] = [
 
   {
     id: "proj-5",
-    title: "Dental Appointment System",
+    title: "Sustainable Volunteer Web Platform",
     shortDescription:
-      "Clinic scheduling and patient appointment management system.",
+      "Hackathon-built platform for environmental volunteer event management.",
     fullDescription:
-      "Developed a dental appointment management system focused on improving clinic scheduling workflows and patient reservation handling. Built using PHP, MySQL, HTML, CSS, and JavaScript within a XAMPP environment. Implemented appointment scheduling, patient tracking, reservation workflows, and responsive interfaces to improve accessibility and clinic management processes.",
-    category: "Academic Project",
+      "Developed a backend volunteer management platform during a sustainability-focused hackathon. Built using React.js, Express.js, TypeScript, and MongoDB, the platform enabled volunteer event organization, participant coordination, and decentralized integrations using ICP technologies. Collaborated within a fast-paced team environment and delivered a production-ready prototype within a two-week development cycle.",
+    category: "Hackathon Project",
     year: "2024",
-    role: "Full-Stack Developer",
-    images: [],
-    tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    github: "https://github.com/Gwenn01/Appointment-System",
+    role: "Frontend & Backend Developer",
+    images: [
+      "/projectImage/sustain1.webp",
+      "/projectImage/sustain2.webp",
+      "/projectImage/sustain3.jpeg",
+      "/projectImage/sustain4.jpeg",
+    ],
+    tags: ["React", "TypeScript", "Express.js", "MongoDB", "ICP"],
+    github: "https://github.com/Gwenn01/azle-react",
     live: "",
     featured: false,
-    accentColor: "amber",
+    accentColor: "emerald",
   },
 
   {
@@ -324,11 +328,11 @@ export const projects: Project[] = [
     shortDescription:
       "AI-powered blockchain monitoring tool for suspicious wallet detection.",
     fullDescription:
-      "Developed an AI-powered blockchain monitoring application during a hackathon competition designed to detect suspicious cryptocurrency wallet activities and improve blockchain transparency. Built using Flask, React, Base Ethereum Layer 2, and machine learning regression models for wallet behavior analysis and risk detection. Integrated smart contract validation and collaborated with a team to architect, implement, and present the solution in a competitive fast-paced environment.",
+      "Developed an Backend AI-powered blockchain monitoring web application during a hackathon competition designed to detect suspicious cryptocurrency wallet activities and improve blockchain transparency. Built using Flask, React, Base Ethereum Layer 2, and machine learning regression models for wallet behavior analysis and risk detection. Integrated smart contract validation and collaborated with a team to architect, implement, and present the solution in a competitive fast-paced environment.",
     category: "Hackathon Project",
     year: "2025",
     role: "Backend & AI Developer",
-    images: [],
+    images: ["/projectImage/blockchain1.jpeg"],
     tags: [
       "Flask",
       "React",
@@ -386,6 +390,7 @@ export const projects: Project[] = [
       "/projectImage/proctorvision31.png",
       "/projectImage/proctorvision32.png",
       "/projectImage/proctorvision33.png",
+      "/projectImage/proctorvision34.png",
     ],
     tags: [
       "Flask",
@@ -414,7 +419,7 @@ export const projects: Project[] = [
     category: "Research Project",
     year: "2026",
     role: "Backend & AI Developer",
-    images: [],
+    images: ["/projectImage/bert1.jpeg", "/projectImage/bert2.jpeg"],
     tags: [
       "Flask",
       "React",
@@ -478,7 +483,15 @@ export const projects: Project[] = [
     category: "Enterprise Academic System",
     year: "2026",
     role: "Backend Developer",
-    images: [],
+    images: [
+      "/projectImage/proposal1.jpeg",
+      "/projectImage/proposal2.jpeg",
+      "/projectImage/proposal3.jpeg",
+      "/projectImage/proposal4.jpeg",
+      "/projectImage/proposal5.jpeg",
+      "/projectImage/proposal6.jpeg",
+      "/projectImage/proposal7.jpeg",
+    ],
     tags: [
       "Django",
       "React",
