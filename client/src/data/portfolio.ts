@@ -124,6 +124,82 @@ export const EDUCATION_ACHIEVEMENTS = [
   },
 ];
 
+export type Certificate = {
+  id: string;
+  title: string;
+  issuer: string;
+  issuerLogo: string;
+  issuedMonth: string;
+  credentialUrl: string;
+  images: string[];
+  category: string;
+  featured: boolean;
+};
+
+export const certificates: Certificate[] = [
+  {
+    id: "cert-1",
+    title: "CSS NCII",
+    issuer: "TESDA - Technical Education and Skills Development Authority",
+    issuerLogo: "",
+    issuedMonth: "March 2021",
+    credentialUrl: "",
+    images: [
+      "/certificateImages/nc1.png",
+      "/certificateImages/nc2.png",
+      "/certificateImages/nc3.png",
+    ],
+    category: "Networking",
+    featured: true,
+  },
+  {
+    id: "cert-2",
+    title: "Sololearn Certificate in Programming",
+    issuer: "Sololearn",
+    issuerLogo: "",
+    issuedMonth: "September 2023",
+    credentialUrl: "",
+    images: [
+      "/certificateImages/sololearn1.jpg",
+      "/certificateImages/sololearn2.jpg",
+      "/certificateImages/sololearn3.jpg",
+      "/certificateImages/sololearn4.jpg",
+      "/certificateImages/sololearn5.jpg",
+      "/certificateImages/sololearn6.jpg",
+    ],
+    category: "Programming",
+    featured: true,
+  },
+  {
+    id: "cert-3",
+    title: "JS Course",
+    issuer: "Codeliber",
+    issuerLogo: "",
+    issuedMonth: "November 2023",
+    credentialUrl: "",
+    images: ["/certificateImages/codeliber1.jpg"],
+    category: "Programming",
+    featured: true,
+  },
+  {
+    id: "cert-4",
+    title: "Dean Lister's 1st - 4th year Certificate of Recognition",
+    issuer: "President Ramon Magsaysay State University",
+    issuerLogo: "/prmsu.png",
+    issuedMonth: "May 2025",
+    credentialUrl: "",
+    images: [
+      "/certificateImages/deanlister1.jpg",
+      "/certificateImages/deanlister2.jpg",
+      "/certificateImages/deanlister3.jpg",
+      "/certificateImages/deanlister4.jpg",
+      "/certificateImages/deanlister5.jpg",
+    ],
+    category: "Academic",
+    featured: true,
+  },
+];
+
 export type Experience = {
   id: string;
   role: string;

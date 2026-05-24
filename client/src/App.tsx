@@ -1,6 +1,7 @@
 import Navbar from "./pages/Navbar";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
+import Certifications from "./pages/Certification";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -60,6 +61,7 @@ export default function App() {
         <About />
         <Experience />
         <Projects />
+        <Certifications />
         <Contact />
       </main>
 
