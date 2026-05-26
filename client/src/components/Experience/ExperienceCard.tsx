@@ -177,7 +177,7 @@ export default function ExperienceCard({
                 <span className="text-[10px] font-bold tracking-widest font-mono uppercase text-blue-400">
                   DOC_VIEWER // ATTACHMENT
                 </span>
-                <span className="text-xs font-semibold text-zinc-300 truncate max-w-[220px] sm:max-w-xs">
+                <span className="text-xs font-semibold text-zinc-300 truncate max-w-55 sm:max-w-xs">
                   {experience.company}
                 </span>
               </div>
