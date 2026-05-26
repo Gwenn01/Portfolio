@@ -29,8 +29,7 @@ function EducationCard({
         <div className="absolute top-0 left-0 h-0.5 w-0 group-hover:w-full bg-linear-to-r from-blue-500 via-sky-400 to-cyan-400 transition-all duration-500 z-10 rounded-t-xl" />
 
         <div className="relative p-4">
-          {/* Main row: icon + info + badges */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-start gap-3">
             {/* Icon */}
             <div
               className={[
@@ -65,68 +64,114 @@ function EducationCard({
               )}
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-start gap-3">
-              {/* Left */}
-              <div className="flex-1 min-w-0">
-                <h3
+            {/* All text — always left-aligned, full width */}
+            <div className="flex-1 min-w-0 space-y-1.5">
+              {/* Row 1: title */}
+              <h3
+                className={[
+                  "text-[12px] sm:text-[12.5px]",
+                  "font-bold leading-snug wrap-break-words",
+                  "text-slate-800 dark:text-white",
+                  "group-hover:text-blue-600 dark:group-hover:text-blue-400",
+                  "transition-colors duration-300 font-['Sora',sans-serif]",
+                ].join(" ")}
+              >
+                {item.title}
+              </h3>
+
+              {/* Row 2: school */}
+              <p className="text-[10.5px] sm:text-[11px] font-medium text-slate-400 dark:text-slate-500 wrap-break-words">
+                {item.subtitle}
+              </p>
+
+              {/* Row 3: date + grade + achievement — all left, wrap naturally */}
+              <div className="flex flex-wrap items-center gap-1.5">
+                {/* Date — always first, always left */}
+                <span
                   className={[
-                    "text-[10px] sm:text-[10.5px] md:text-xs",
-                    "font-bold leading-tight",
-                    "text-slate-800 dark:text-white",
-                    "group-hover:text-blue-600 dark:group-hover:text-blue-400",
-                    "transition-colors duration-300 font-['Sora',sans-serif]",
-                    "wrap-break-word",
+                    "inline-flex items-center gap-1",
+                    "px-2 py-0.5 rounded-md",
+                    "text-[9px] sm:text-[9.5px] font-bold tracking-wide uppercase font-mono",
+                    "bg-slate-100 dark:bg-white/5",
+                    "border border-slate-200 dark:border-white/[0.07]",
+                    "text-slate-400 dark:text-slate-500",
                   ].join(" ")}
                 >
-                  {item.title}
-                </h3>
-
-                <p className="text-[9.5px] sm:text-[11px] font-medium text-slate-400 dark:text-slate-500 mt-0.5 wrap-break-word">
-                  {item.subtitle}
-                </p>
-              </div>
-
-              {/* Right */}
-              <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-                {/* Date */}
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[8px] sm:text-[9.5px] font-bold tracking-wide uppercase font-mono bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/[0.07] text-slate-400 dark:text-slate-500">
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
                   {item.date}
                 </span>
 
-                {/* Grade + Achievement */}
-                <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-                  {item.grade && (
-                    <span
-                      className={[
-                        "inline-flex items-center px-2 py-0.5 rounded-sm",
-                        "text-[8px] sm:text-[10px]",
-                        "font-semibold tracking-wider uppercase font-mono",
-                        "bg-blue-50 dark:bg-blue-950/40",
-                        "text-blue-600 dark:text-blue-400",
-                        "border border-blue-100 dark:border-blue-900/30",
-                      ].join(" ")}
+                {/* Grade */}
+                {item.grade && (
+                  <span
+                    className={[
+                      "inline-flex items-center gap-1",
+                      "px-2 py-0.5 rounded-md",
+                      "text-[9px] sm:text-[9.5px] font-bold font-mono",
+                      "bg-emerald-50 dark:bg-emerald-500/10",
+                      "border border-emerald-200 dark:border-emerald-500/20",
+                      "text-emerald-700 dark:text-emerald-400",
+                    ].join(" ")}
+                  >
+                    <svg
+                      width="8"
+                      height="8"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
-                      Grade {item.grade}
-                    </span>
-                  )}
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                      <polyline points="17 6 23 6 23 12" />
+                    </svg>
+                    {item.grade}
+                  </span>
+                )}
 
-                  {item.achievements && (
-                    <span className="text-[9px] sm:text-[11px] font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                      {item.grade && (
-                        <span
-                          className="text-slate-300 dark:text-slate-700"
-                          aria-hidden="true"
-                        >
-                          •
-                        </span>
-                      )}
-
-                      <span className="wrap-break-word">
-                        {item.achievements}
-                      </span>
-                    </span>
-                  )}
-                </div>
+                {/* Achievement */}
+                {item.achievements && (
+                  <span
+                    className={[
+                      "inline-flex items-center gap-1",
+                      "px-2 py-0.5 rounded-md",
+                      "text-[9px] sm:text-[9.5px] font-semibold",
+                      "bg-amber-50 dark:bg-amber-500/10",
+                      "border border-amber-200 dark:border-amber-500/20",
+                      "text-amber-700 dark:text-amber-400",
+                    ].join(" ")}
+                  >
+                    <svg
+                      width="8"
+                      height="8"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="8" r="6" />
+                      <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                    </svg>
+                    {item.achievements}
+                  </span>
+                )}
               </div>
             </div>
           </div>
