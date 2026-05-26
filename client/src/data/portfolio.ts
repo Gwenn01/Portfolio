@@ -1,5 +1,5 @@
 // ╔══════════════════════════════════════════════════════╗
-// ║  PORTFOLIO DATA — Edit this file to personalize      ║
+// ║  PORTFOLIO DATA — Edit this file to personalize  this all include the data
 // ╚══════════════════════════════════════════════════════╝
 import picture from "../assets/picture.png";
 import resume from "../docs/NUQUI_RESUME.pdf";
