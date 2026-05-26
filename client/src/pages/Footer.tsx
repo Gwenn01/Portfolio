@@ -20,6 +20,7 @@ export default function Footer() {
   // Adjust the href properties if your portfolio schema uses different keys
   const socialLinks = [
     { name: "GitHub", path: PATHS.github, href: personal.social.github },
+    { name: "LeetCode", path: PATHS.leetcode, href: personal.social.leetcode },
     { name: "LinkedIn", path: PATHS.linkedin, href: personal.social.linkedin },
     { name: "Facebook", path: PATHS.facebook, href: personal.social.facebook },
     {

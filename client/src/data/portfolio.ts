@@ -28,6 +28,7 @@ export const personal = {
   resume: resume,
   social: {
     github: "https://github.com/Gwenn01",
+    leetcode: "https://leetcode.com/u/gwenn/",
     linkedin: "https://www.linkedin.com/in/arnel-gwen-nuqui-a20336261/",
     facebook: "https://www.facebook.com/arnel.gwen.nuqui.2024/",
   },

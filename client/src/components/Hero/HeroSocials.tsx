@@ -6,6 +6,7 @@ const FACEBOOK_PATH =
 
 const SOCIALS = [
   { href: personal.social.github, path: PATHS.github, label: "GitHub" },
+  { href: personal.social.leetcode, path: PATHS.leetcode, label: "LeetCode" },
   { href: personal.social.linkedin, path: PATHS.linkedin, label: "LinkedIn" },
   { href: personal.social.facebook, path: FACEBOOK_PATH, label: "Facebook" },
   { href: `mailto:${personal.email}`, path: PATHS.mail, label: "Email" },
