@@ -1,6 +1,7 @@
 import { about, personal } from "../data/portfolio";
 import { SectionHeader, FadeIn } from "../components/ui";
 import AboutBio from "../components/About/Aboutbio";
+import LeetCodeCard from "../components/About/LeetCode";
 import AboutEducation from "../components/About/Abouteducation";
 import AboutSkills from "../components/About/Aboutskills";
 
@@ -18,6 +19,7 @@ export default function About() {
             paragraphs={about.paragraphs}
             location={personal.location}
           />
+          <LeetCodeCard />
         </FadeIn>
 
         {/* ── Row 2: Education (left) + Skills (right) ── */}
