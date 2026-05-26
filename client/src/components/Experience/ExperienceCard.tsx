@@ -1,6 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tag } from "../ui";
-import { Briefcase, Eye, ExternalLink, X } from "lucide-react";
+import {
+  Briefcase,
+  Eye,
+  ExternalLink,
+  X,
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface Experience {
   id: string;
@@ -18,150 +27,213 @@ export default function ExperienceCard({
   experience: Experience;
 }) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
+
+  // Prevent background scroll leaking when lightbox is deployed on mobile touch screens
+  useEffect(() => {
+    if (isPreviewOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isPreviewOpen]);
 
   return (
     <>
-      <div className="relative group">
-        {/* Timeline structural line accent */}
-        <div className="absolute left-5 top-10 -bottom-2.5 w-px bg-zinc-100 dark:bg-zinc-800 pointer-events-none" />
-
-        {/* Timeline node icon */}
-        <div className="absolute left-0 top-0 w-10 h-10 rounded-xl flex items-center justify-center bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-md group-hover:border-blue-500/50 dark:group-hover:border-blue-500/30 transition-all duration-300 z-10">
-          <Briefcase className="w-5 h-5 text-zinc-500 group-hover:text-blue-500 transition-colors" />
+      <div className="group/item relative flex gap-4 md:gap-6 items-start">
+        {/* Left Side Rail Track */}
+        <div className="relative flex flex-col items-center self-stretch hidden sm:flex shrink-0 w-10">
+          {/* Timeline Node Base Badge Indicator */}
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/80 shadow-xs group-hover/item:border-blue-500/40 dark:group-hover/item:border-blue-500/30 group-hover/item:shadow-sm group-hover/item:shadow-blue-500/5 transition-all duration-300 z-10">
+            <Briefcase className="w-4 h-4 text-zinc-400 dark:text-zinc-500 group-hover/item:text-blue-500 dark:group-hover/item:text-blue-400 group-hover/item:scale-110 transition-all duration-300" />
+          </div>
+          {/* Vertical Track Spline Connection Pin */}
+          <div className="absolute top-10 bottom-0 w-px bg-zinc-200/60 dark:bg-zinc-800/60 group-hover/item:bg-blue-500/10 transition-colors duration-300" />
         </div>
 
+        {/* Core Narrative Entry Box Container */}
         <div
           className={[
-            "ml-16 relative overflow-hidden rounded-2xl md:rounded-3xl",
+            "relative flex-1 overflow-hidden rounded-2xl md:rounded-3xl",
             "border border-zinc-200/80 dark:border-zinc-800/80",
-            "bg-white dark:bg-zinc-900/40",
-            "p-6 md:p-8",
+            "bg-white dark:bg-zinc-900/30",
+            "p-5 sm:p-6 md:p-8",
             "transition-all duration-300 ease-out",
-            "hover:border-blue-100 dark:hover:border-blue-900/30",
-            "hover:bg-white dark:hover:bg-zinc-900/60",
-            "hover:-translate-y-1",
-            "hover:shadow-lg hover:shadow-blue-500/5 dark:hover:shadow-none",
+            "hover:border-blue-200/60 dark:hover:border-blue-900/40",
+            "hover:bg-linear-to-b hover:from-white hover:to-zinc-50/30 dark:hover:from-zinc-900/40 dark:hover:to-zinc-900/20",
+            "hover:shadow-xl hover:shadow-zinc-200/40 dark:hover:shadow-none",
           ].join(" ")}
         >
-          {/* Ambient light ring on card hover */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-radial from-blue-500/5 to-transparent transition-opacity duration-500 pointer-events-none" />
+          {/* Subtle Ambient Branding Backdrop Glow */}
+          <div className="absolute inset-0 opacity-0 group-hover/item:opacity-100 bg-radial from-blue-500/3 to-transparent transition-opacity duration-500 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col gap-4">
-            {/* Header Identity Row */}
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+            {/* Header Layout Grid Frame */}
+            <div className="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-1">
-                <h3 className="text-lg md:text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-200">
                   {experience.role}
                 </h3>
-                <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
-                  {experience.company}
-                </p>
+
+                <div className="flex items-center gap-2 flex-wrap text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                  <span className="text-blue-600 dark:text-blue-400/90">
+                    {experience.company}
+                  </span>
+                  {/* Inline Period Pin only visible during compressed single-column mobile view layouts */}
+                  <span className="sm:hidden inline-flex items-center gap-1 text-xs font-medium text-zinc-400 dark:text-zinc-500">
+                    <span className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                    {experience.period}
+                  </span>
+                </div>
               </div>
 
-              {/* Temporal Badge */}
-              <span
-                className={[
-                  "w-fit text-[11px] md:text-xs font-semibold tracking-wider uppercase font-mono",
-                  "text-blue-700 dark:text-blue-300",
-                  "bg-blue-50/70 dark:bg-blue-950/40",
-                  "border border-blue-100 dark:border-blue-900/30",
-                  "px-3 py-1 rounded-lg",
-                ].join(" ")}
-              >
-                {experience.period}
-              </span>
+              {/* Precise Monospaced Desktop Temporal Ribbon Badge */}
+              <div className="hidden sm:block shrink-0">
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider font-mono uppercase text-blue-700 dark:text-blue-400 bg-blue-50/60 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/30 px-3 py-1 rounded-lg">
+                  <Calendar size={11} className="text-blue-500/70" />
+                  {experience.period}
+                </span>
+              </div>
             </div>
 
-            {/* Role Narrative Description */}
-            <p className="text-sm md:text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400">
-              {experience.description}
-            </p>
+            {/* Mobile View Toggle Action Button Trigger (Controls ONLY the text content blocks) */}
+            <button
+              onClick={() => setIsMobileExpanded(!isMobileExpanded)}
+              className="flex sm:hidden items-center justify-between w-full px-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 text-xs font-bold text-zinc-700 dark:text-zinc-300 transition active:bg-zinc-100 dark:active:bg-zinc-800/80"
+            >
+              <span>
+                {isMobileExpanded ? "Hide Description" : "View Details"}
+              </span>
+              {isMobileExpanded ? (
+                <ChevronUp size={14} className="text-zinc-400" />
+              ) : (
+                <ChevronDown size={14} className="text-zinc-400" />
+              )}
+            </button>
 
-            {/* Single Visual Document Attachment Section */}
+            {/* Collapsible Content Block (Description & Tags) */}
+            <div
+              className={`${isMobileExpanded ? "flex" : "hidden sm:flex"} flex-col gap-4`}
+            >
+              <p className="text-sm md:text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400 font-normal">
+                {experience.description}
+              </p>
+
+              {/* Technology Integration Footing Row */}
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {experience.tags.map((tag) => (
+                  <Tag key={tag} label={tag} />
+                ))}
+              </div>
+            </div>
+
+            {/* Document Thumbnail Component (Always visible outside the text details toggle) */}
             {experience.document && (
-              <div className="pt-2 max-w-md w-full">
+              <div className="pt-1 max-w-sm w-full">
                 <button
                   onClick={() => setIsPreviewOpen(true)}
-                  className={[
-                    "group/img relative aspect-16/10 w-full rounded-xl overflow-hidden cursor-zoom-in text-left",
-                    "bg-zinc-50 dark:bg-zinc-900",
-                    "border border-zinc-200/80 dark:border-zinc-800/80",
-                    "transition-all duration-300 hover:border-blue-400/60 dark:hover:border-blue-400/40",
-                  ].join(" ")}
+                  className="group/thumb relative aspect-16/10 w-full rounded-xl overflow-hidden cursor-zoom-in text-left bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 shadow-xs transition-all duration-300 hover:border-blue-500/40 dark:hover:border-blue-400/40 hover:shadow-md"
                 >
                   <img
                     src={experience.document}
-                    alt="Certificate of Employment Preview"
-                    className="w-full h-full object-cover opacity-95 group-hover/img:opacity-75 transition-opacity duration-300"
+                    alt="Certificate document thumbnail"
+                    className="w-full h-full object-cover opacity-95 dark:opacity-90 group-hover/thumb:scale-102 group-hover/thumb:opacity-90 transition-all duration-500"
                     loading="lazy"
                   />
 
-                  {/* Absolute Overlay Control HUD */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-3 bg-linear-to-t from-black/60 via-transparent to-black/10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
-                    <div className="self-end rounded-md bg-zinc-900/80 backdrop-blur-xs p-1.5 border border-zinc-700/50">
-                      <Eye size={14} className="text-zinc-200" />
-                    </div>
-
-                    <span className="text-[11px] font-bold tracking-wider font-mono uppercase text-white drop-shadow-xs">
+                  {/* Clean Bottom Header Strip Overlay Layer */}
+                  <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/40 to-transparent p-3 pt-8 flex items-center justify-between gap-4">
+                    <span className="text-[11px] font-bold tracking-wider font-mono uppercase text-zinc-100 truncate">
                       Certificate of Employment
                     </span>
+                    <div className="flex items-center gap-1 text-[10px] font-bold text-blue-400 dark:text-blue-400 bg-white/10 dark:bg-zinc-950/60 backdrop-blur-md px-2 py-0.5 rounded-md border border-white/10 shrink-0 opacity-90 group-hover/thumb:opacity-100 transition-opacity">
+                      <Eye size={10} />
+                      <span>PREVIEW</span>
+                    </div>
                   </div>
                 </button>
               </div>
             )}
-
-            {/* Technologies Applied Tags container */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {experience.tags.map((tag) => (
-                <Tag key={tag} label={tag} />
-              ))}
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Full Screen Lightbox Portal */}
-      {isPreviewOpen && experience.document && (
-        <div
-          className="fixed inset-0 bg-black/85 z-50 p-4 backdrop-blur-md flex flex-col items-center justify-center cursor-zoom-out"
-          onClick={() => setIsPreviewOpen(false)}
-        >
-          {/* Escape / Close Handle */}
-          <div className="absolute top-4 right-4 z-51">
-            <button className="text-zinc-400 hover:text-white p-2 rounded-lg bg-zinc-900/50 backdrop-blur-xs border border-zinc-800">
-              <X size={20} />
-            </button>
-          </div>
-
-          <div
-            className="relative max-w-4xl max-h-[80vh] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-1"
-            onClick={(e) => e.stopPropagation()}
+      {/* Upgraded Immersive Scrollable Tap-to-Dismiss Lightbox Module */}
+      <AnimatePresence>
+        {isPreviewOpen && experience.document && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsPreviewOpen(false)}
+            className="fixed inset-0 bg-zinc-950/98应用 z-9999 backdrop-blur-md overflow-y-auto flex flex-col justify-start items-center select-none cursor-zoom-out"
           >
-            <img
-              src={experience.document}
-              alt="Certificate of Employment Full View"
-              className="w-auto h-auto max-w-full max-h-[75vh] object-contain rounded-xl"
-            />
-
-            <div className="p-4 flex items-center justify-between border-t border-zinc-900 bg-zinc-950 mt-1 rounded-b-xl">
-              <div className="space-y-0.5">
-                <h5 className="text-sm font-bold text-zinc-100 font-mono tracking-wide uppercase">
-                  Certificate of Employment
-                </h5>
-                <p className="text-xs text-zinc-500">{experience.company}</p>
+            {/* Absolute Fixed Sticky Top Control HUD Bar */}
+            <div className="sticky top-0 inset-x-0 h-16 bg-zinc-950/95 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 z-50 border-b border-zinc-900/60 w-full shrink-0">
+              <div className="flex flex-col min-w-0">
+                <span className="text-[10px] font-bold tracking-widest font-mono uppercase text-blue-400">
+                  DOC_VIEWER // ATTACHMENT
+                </span>
+                <span className="text-xs font-semibold text-zinc-300 truncate max-w-[220px] sm:max-w-xs">
+                  {experience.company}
+                </span>
               </div>
-              <a
-                href={experience.document}
-                target="_blank"
-                rel="noreferrer"
-                className="text-xs font-semibold flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition"
+
+              <button
+                onClick={() => setIsPreviewOpen(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 active:scale-95 transition"
               >
-                <ExternalLink size={12} /> View Raw Image
-              </a>
+                <X size={18} />
+              </button>
             </div>
-          </div>
-        </div>
-      )}
+
+            {/* Presentation Card Wrapper */}
+            <motion.div
+              initial={{ scale: 0.97, y: 12 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.97, y: 12 }}
+              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              onClick={(e) => e.stopPropagation()}
+              className="w-full sm:max-w-4xl flex flex-col justify-start bg-transparent sm:bg-zinc-900/30 sm:border sm:border-zinc-800/50 sm:rounded-2xl sm:p-2 my-4 sm:my-8 overflow-hidden cursor-default"
+            >
+              {/* Primary Image Presenter (Tapping the image frame itself also dismisses the window seamlessly) */}
+              <div
+                className="w-full flex items-center justify-center p-4 sm:p-6 min-h-[60vh] sm:min-h-0 cursor-zoom-out"
+                onClick={() => setIsPreviewOpen(false)}
+              >
+                <img
+                  src={experience.document}
+                  alt="Certificate of Employment Full Resolution View"
+                  className="w-full h-auto max-w-full object-contain rounded-xl shadow-2xl pointer-events-none"
+                />
+              </div>
+
+              {/* Bottom Action Sheet Footer */}
+              <div className="bg-zinc-950 p-5 sm:p-4 flex flex-col sm:flex-row gap-4 items-center sm:justify-between border-t border-zinc-900 rounded-b-xl w-full">
+                <div className="text-center sm:text-left space-y-0.5 w-full sm:w-auto">
+                  <h5 className="text-sm font-bold text-zinc-100 font-mono tracking-wide uppercase">
+                    Certificate of Employment
+                  </h5>
+                  <p className="text-xs text-zinc-500">{experience.company}</p>
+                </div>
+
+                <a
+                  href={experience.document}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-md shadow-blue-600/10 hover:bg-blue-500 active:scale-98 transition duration-200"
+                >
+                  <ExternalLink size={13} />
+                  <span>Open Full Resolution</span>
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
