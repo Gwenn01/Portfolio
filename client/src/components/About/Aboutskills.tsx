@@ -134,10 +134,11 @@ function SkillRow({
         className={`absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-r ${theme.bgGlow} transition-opacity duration-500 pointer-events-none`}
       />
 
-      <div className="relative z-10 p-2 sm:p-2.5 px-4">
-        <div className="flex flex-row items-center justify-between gap-4">
-          {/* Category block */}
-          <div className="flex items-center gap-2.5 min-w-35 sm:min-w-40 shrink-0 cursor-default">
+      <div className="relative z-10 p-3 sm:p-2.5 px-4">
+        {/* Adjusted flex containers here to handle responsive wrap breaking safely */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+          {/* Category block wrapper handles layout balancing across small views */}
+          <div className="flex items-center gap-2.5 w-full sm:w-auto sm:min-w-40 shrink-0 cursor-default">
             {/* Styled color-coded icon container */}
             <div
               className={[
@@ -152,15 +153,15 @@ function SkillRow({
               {CATEGORY_ICONS[category] || CATEGORY_ICONS.Default}
             </div>
 
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1 sm:flex-initial">
               <h3 className="text-[11px] font-bold tracking-wide text-zinc-700 dark:text-zinc-200 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors duration-200 truncate">
                 {category}
               </h3>
             </div>
           </div>
 
-          {/* Compact skills layout mapping */}
-          <div className="flex flex-wrap items-center gap-1.5 justify-end w-full">
+          {/* Compact skills layout mapping - left aligned on mobile, right aligned on desktop */}
+          <div className="flex flex-wrap items-center gap-1.5 justify-start sm:justify-end w-full">
             {items.map((item) => (
               <SkillTag key={item} label={item} theme={theme} />
             ))}
