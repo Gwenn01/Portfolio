@@ -1,7 +1,13 @@
 import { personal } from "../data/portfolio";
 import { Icon, PATHS } from "../components/ui";
 
-const NAV_ITEMS = ["about", "experience", "projects", "contact"] as const;
+const NAV_ITEMS = [
+  "about",
+  "experience",
+  "projects",
+  "certificates",
+  "contact",
+] as const;
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

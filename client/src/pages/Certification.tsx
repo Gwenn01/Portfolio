@@ -36,7 +36,7 @@ export default function Certifications() {
   const hasMore = filtered.length > PAGE;
 
   return (
-    <section id="certifications" className="py-28 px-6">
+    <section id="certificates" className="py-28 px-6">
       <div className="max-w-6xl mx-auto space-y-10">
         {/* Header */}
         <FadeIn>

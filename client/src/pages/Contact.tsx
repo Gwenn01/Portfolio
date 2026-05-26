@@ -12,8 +12,6 @@ const EMAILJS_PUBLIC_KEY = "tEd5iWqPCi7GXWqap"; // e.g. "AbCdEfGhIjKlMnOp"
 type Status = "idle" | "sending" | "sent" | "error";
 
 // ── Facebook SVG path ─────────────────────────────────────────────────────
-const FACEBOOK_PATH =
-  "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -66,7 +64,7 @@ export default function Contact() {
   const SOCIALS = [
     { href: personal.social.github, path: PATHS.github, label: "GitHub" },
     { href: personal.social.linkedin, path: PATHS.linkedin, label: "LinkedIn" },
-    { href: personal.social.facebook, path: FACEBOOK_PATH, label: "Facebook" },
+    { href: personal.social.facebook, path: PATHS.facebook, label: "Facebook" },
     { href: `mailto:${personal.email}`, path: PATHS.mail, label: "Email" },
   ].filter((s) => s.href);
 
