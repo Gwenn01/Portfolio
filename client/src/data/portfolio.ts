@@ -460,7 +460,7 @@ export const projects: Project[] = [
       "Financial management system designed to automate barangay budget transactions and improve public transparency..",
     fullDescription:
       "Worked primarily as a Backend Developer in a thesis client project for Barangay San Agustin, Iba, Zambales, collaborating with one frontend developer responsible for the user interface. Developed backend services for a financial tracking and budget management platform designed to automate barangay budget transactions, financial workflows, and transparency reporting through a centralized web application. Built RESTful APIs using Flask and PostgreSQL for handling financial records, transaction processing, reporting workflows, and secure data management, while using Postman extensively for API testing, validation, and debugging. Also managed backend architecture, database integration, deployment workflows, and cloud hosting using Render to ensure stable API accessibility, while supporting a public-facing landing page that allows citizens to view budget-related information and financial summaries.",
-    category: "Government Financial System",
+    category: "Thesis Client Project",
     year: "2026",
     role: "Backend Developer",
     images: [
