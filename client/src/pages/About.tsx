@@ -19,7 +19,6 @@ export default function About() {
             paragraphs={about.paragraphs}
             location={personal.location}
           />
-          <LeetCodeCard />
         </FadeIn>
 
         {/* ── Row 2: Education (left) + Skills (right) ── */}
@@ -46,6 +45,11 @@ export default function About() {
             <AboutSkills skills={about.skills} />
           </FadeIn>
         </div>
+
+        {/* leet code showcase */}
+        <FadeIn delay={0.1}>
+          <LeetCodeCard />
+        </FadeIn>
       </div>
     </section>
   );
