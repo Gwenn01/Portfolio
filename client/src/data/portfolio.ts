@@ -643,4 +643,15 @@ export const certificates: Certificate[] = [
     category: "Academic",
     featured: true,
   },
+  {
+    id: "cert-5",
+    title: "Data Science Essentials in Python",
+    issuer: "Cisco Networking Academy",
+    issuerLogo: "/ciscologo.png",
+    issuedMonth: "May 2025",
+    credentialUrl: "",
+    images: ["/certificateImages/cisco_datascience.png"],
+    category: "Programming",
+    featured: true,
+  },
 ];
